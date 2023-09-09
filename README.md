@@ -4,7 +4,7 @@
 
 To set up showmarks.vim in VimL you can do either of these:
 ```vim
-let g:showmarks_enable = 1
+let g:showmarks_autoload = 1
 ```
 
 ```vim
@@ -14,11 +14,11 @@ call showmarks#setup()
 And from lua you can:
 
 ```lua
-vim.g.showmarks_enable = 1
+vim.g.showmarks_autoload = 1
 ```
 
 ```lua
-vim.fn['showmarks#enable']()
+vim.fn['showmarks#setup']()
 ```
 
 ```lua
