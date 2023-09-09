@@ -22,23 +22,6 @@
 
 "For more information, please refer to <https://unlicense.org/>
 
-" MODIFY(jwu) { 
-" noremap <unique> <script> \sm m
-" noremap <silent> m :exe 'norm \sm'.nr2char(getchar())<bar>call <sid>ShowMarks()<CR>
-" NOTE: use nnoremap to fix conlict with snipMate. when use snipMate, when you input m, it will be ma. 
-" nnoremap <unique> <silent> m :call <sid>ShowMarksPlaceMark( nr2char(getchar()) )<CR>
-" } MODIFY(jwu) end 
-
-" DISABLE(jwu) { 
-" AutoCommands: Only if ShowMarks is enabled
-" if g:showmarks_enable == 1
-"	aug ShowMarks
-"		au!
-"		autocmd CursorHold * call s:ShowMarks()
-"	aug END
-" endif
-" } DISABLE(jwu) end 
-
 if has('signs') == 0
     echohl ErrorMsg
     echom 'showmarks.vim: requires Vim to have +signs support'
