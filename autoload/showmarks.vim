@@ -51,6 +51,10 @@ function! s:showmarks() abort
         return
     endif
 
+    if index(get(g:, 'showmarks_disabled_buftypes', []), &buftype) >= 0
+        return
+    endif
+
     let bufnr = bufnr()
 
     call sign_unplace(s:sign_group, { 'buffer': bufnr })
@@ -117,7 +121,9 @@ endfunction
 function! showmarks#setup() abort
     let all_marks = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.'`^<>[]{}()\""
     let g:showmarks_include = get(g:, 'showmarks_include', all_marks)
-
+    let g:showmarks_disabled_buftypes = get(
+        \g:, 'showmarks_disabled_buftypes', [ 'help', 'nofile', 'terminal' ]
+    \)
 
     for ch in all_marks
         let sign = s:get_sign(ch)
