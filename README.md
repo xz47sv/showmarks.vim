@@ -1,24 +1,38 @@
-# My personal Neovim config
+# Yet Another ShowMarks Plugin
 
-The `minimal/` directory contains a smaller Vim-compatible config, that I use
-on remote machines or setups where I don't need LSP.
+## Setup
 
-Plugins are installed with `update.py` based on the contents of `plugins.json`
-and `minimal/plugins.json`.
-
-Rest of the config is pretty self-explanatory, just follow the `require` calls
-in `init.lua` to find out more.
-
-## Minimal vim setup
-
-```bash
-git clone --depth 1 https://git.ash.fail/config.nvim \
-    && mkdir -p ~/.vim \
-    && find config.nvim \
-        -maxdepth 1 \
-        -not -path '*/pack' \
-        -not -path '*/.*' \
-        -exec cp -rfv {} ~/.vim/ \; \
-    && ln -sfv ~/.vim/minimal/pack ~/.vim/pack \
-    && echo "runtime minimal/init.vim" > ~/.vimrc
+To set up showmarks.vim in VimL you can do either of these:
+```vim
+let g:showmarks_autoload = 1
 ```
+
+```vim
+call showmarks#setup()
+```
+
+And from lua you can:
+
+```lua
+vim.g.showmarks_autoload = 1
+```
+
+```lua
+vim.fn['showmarks#setup']()
+```
+
+```lua
+require('showmarks').setup()
+```
+
+## Docs
+
+TODO
+
+## Reference
+
+* [ShowMarks by exvim](https://github.com/exvim/ex-showmarks)
+* [ShowMarks on vim.org](http://www.vim.org/scripts/script.php?script_id=152)
+* [ShowMarks on github vim-scripts](https://github.com/vim-scripts/ShowMarks)
+* [Easwy's patch](http://easwy.com/blog/archives/advanced-vim-skills-advanced-move-method)
+

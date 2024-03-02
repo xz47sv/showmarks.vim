@@ -1,8 +1,3 @@
-Unless otherwise stated, all files in this directory and its subdirectories are
-licensed as described below.
-
-===============================================================================
-
 This is free and unencumbered software released into the public domain.
 
 Anyone is free to copy, modify, publish, use, compile, sell, or distribute this
