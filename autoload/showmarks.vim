@@ -22,11 +22,11 @@
 
 "For more information, please refer to <https://unlicense.org/>
 
-let s:sign_group = 'ShowMarks'
+let s:sign_group = 'showmarks'
 let s:timer = -1
 
 function! s:get_sign(ch) abort
-    return 'ShowMarks_' . char2nr(a:ch)
+    return 'showmarks_' . char2nr(a:ch)
 endfunction
 
 function! s:on() abort
@@ -98,7 +98,7 @@ function! s:showmarks_callback(...) abort
     for [lnum, sign] in items(signs)
         let sign_name = s:get_sign(sign[1])
 
-        execute 'hi link ' . sign_name . ' ShowMarks' . sign[2]
+        execute 'hi link ' . sign_name . ' showmarks' . sign[2]
         call sign_place(
             \0,
             \s:sign_group,
